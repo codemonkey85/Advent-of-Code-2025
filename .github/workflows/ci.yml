@@ -25,7 +25,7 @@ jobs:
         run: dotnet restore
         working-directory: ./AdventOfCode
 
-      - name: Build Web
+      - name: Build
         run: dotnet build --configuration Release --no-restore
         working-directory: ./AdventOfCode
 
