@@ -1,4 +1,6 @@
-﻿namespace AdventOfCode.Days;
+﻿// https://adventofcode.com/2025/day/1
+
+namespace AdventOfCode.Days;
 
 [AocExpected("12345", "67890")]
 // ReSharper disable once UnusedType.Global
