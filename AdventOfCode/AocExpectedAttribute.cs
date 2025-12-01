@@ -2,8 +2,8 @@
 
 namespace AdventOfCode;
 
-[AttributeUsage(AttributeTargets.Class, Inherited = false),
- SuppressMessage("ReSharper", "UnusedMember.Global")]
+[AttributeUsage(AttributeTargets.Class, Inherited = false)]
+[SuppressMessage("ReSharper", "UnusedMember.Global")]
 public sealed class AocExpectedAttribute(string part1, string part2) : Attribute
 {
     public string Part1 { get; } = part1;

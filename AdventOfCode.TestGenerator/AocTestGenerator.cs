@@ -74,7 +74,8 @@ public sealed class AocTestGenerator : IIncrementalGenerator
             return;
         }
 
-        var attr = Enumerable.FirstOrDefault(type.GetAttributes(), a => SymbolEqualityComparer.Default.Equals(a.AttributeClass, attrSymbol));
+        var attr = Enumerable.FirstOrDefault(type.GetAttributes(),
+            a => SymbolEqualityComparer.Default.Equals(a.AttributeClass, attrSymbol));
 
         if (attr == null || attr.ConstructorArguments.Length < 2)
         {
@@ -91,7 +92,10 @@ public sealed class AocTestGenerator : IIncrementalGenerator
             fullName = fullName.Substring("global::".Length);
         }
 
-        list.Add(new AocAnswer { TypeName = fullName, AssemblyName = type.ContainingAssembly.Name, Part1 = part1, Part2 = part2 });
+        list.Add(new AocAnswer
+        {
+            TypeName = fullName, AssemblyName = type.ContainingAssembly.Name, Part1 = part1, Part2 = part2
+        });
     }
 
     private static bool DerivesFrom(INamedTypeSymbol type, INamedTypeSymbol baseType)
