@@ -2,12 +2,12 @@
 
 namespace AdventOfCode.Days;
 
-[AocExpected("1023", "67890")]
+[AocExpected("1023", "")]
 // ReSharper disable once UnusedType.Global
 public sealed class Day01 : BaseDay
 {
     private readonly string input;
-    
+
     // ReSharper disable once UnusedMember.Local
     private const string TestInput =
         """
@@ -36,14 +36,57 @@ public sealed class Day01 : BaseDay
         {
             current += instruction;
 
-            switch (current)
+            while (current is < Constants.Minimum or > Constants.Maximum)
             {
-                case < Constants.Minimum:
-                    current += 100;
-                    break;
-                case > Constants.Maximum:
-                    current -= 100;
-                    break;
+                switch (current)
+                {
+                    case < Constants.Minimum:
+                        current += 100;
+                        break;
+                    case > Constants.Maximum:
+                        current -= 100;
+                        break;
+                }
+            }
+
+            if (current == 0)
+            {
+                count++;
+            }
+        }
+
+        return ValueTask.FromResult(count.ToString());
+    }
+
+    public override ValueTask<string> Solve_2()
+    {
+        var instructions = GetInstructionsFromInput(input);
+
+        var current = Constants.Starting;
+        var count = 0;
+
+        foreach (var instruction in instructions)
+        {
+            var startingAtZero = current == 0;
+
+            current += instruction;
+
+            while (current is < Constants.Minimum or > Constants.Maximum)
+            {
+                switch (current)
+                {
+                    case < Constants.Minimum:
+                        current += 100;
+                        break;
+                    case > Constants.Maximum:
+                        current -= 100;
+                        break;
+                }
+
+                if (current % 100 == 0 || !startingAtZero && current != 0)
+                {
+                    count++;
+                }
             }
 
             if (current == 0)
@@ -60,12 +103,10 @@ public sealed class Day01 : BaseDay
         ..
         from line in inputString.Split('\n', StringSplitOptions.RemoveEmptyEntries)
         let directionChar = line[0]
-        let distance = int.Parse(line[1..]) % 100
+        let distance = int.Parse(line[1..])
         let value = GetDirectionFromChar(directionChar, distance)
         select value
     ];
-
-    public override ValueTask<string> Solve_2() => ValueTask.FromResult("67890");
 
     private static int GetDirectionFromChar(char c, int value) =>
         c switch
