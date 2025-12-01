@@ -1,16 +1,17 @@
 <Solution>
-  <Configurations>
-    <Platform Name="Any CPU" />
-    <Platform Name="x64" />
-    <Platform Name="x86" />
-  </Configurations>
-  <Folder Name="/Solution Items/">
-    <File Path=".editorconfig" />
-    <File Path="Directory.Build.props" />
-    <File Path="Directory.Packages.props" />
-    <File Path="global.json" />
-  </Folder>
-  <Project Path="AdventOfCode.TestGenerator/AdventOfCode.TestGenerator.csproj" Id="075b59b2-cba5-4578-b637-8056c1fcc8cb" />
-  <Project Path="AdventOfCode.Tests/AdventOfCode.Tests.csproj" Id="b1ea3b0b-4c37-4e1b-abc4-09537d5b332e" />
-  <Project Path="AdventOfCode/AdventOfCode.csproj" />
+    <Configurations>
+        <Platform Name="Any CPU"/>
+        <Platform Name="x64"/>
+        <Platform Name="x86"/>
+    </Configurations>
+    <Folder Name="/Solution Items/">
+        <File Path=".editorconfig"/>
+        <File Path="Directory.Build.props"/>
+        <File Path="Directory.Packages.props"/>
+        <File Path="global.json"/>
+    </Folder>
+    <Project Path="AdventOfCode.TestGenerator/AdventOfCode.TestGenerator.csproj"
+             Id="075b59b2-cba5-4578-b637-8056c1fcc8cb"/>
+    <Project Path="AdventOfCode.Tests/AdventOfCode.Tests.csproj" Id="b1ea3b0b-4c37-4e1b-abc4-09537d5b332e"/>
+    <Project Path="AdventOfCode/AdventOfCode.csproj"/>
 </Solution>

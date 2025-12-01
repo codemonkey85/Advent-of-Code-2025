@@ -1,21 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<OutputType>Exe</OutputType>
-	</PropertyGroup>
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="AoCHelper" />
-	</ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="AoCHelper"/>
+    </ItemGroup>
 
-	<PropertyGroup>
-		<NoWarn>S101</NoWarn>
-	</PropertyGroup>
+    <PropertyGroup>
+        <NoWarn>S101</NoWarn>
+    </PropertyGroup>
 
-	<ItemGroup>
-		<None Update="Inputs\*">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</None>
-	</ItemGroup>
+    <ItemGroup>
+        <None Update="Inputs\*">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
 
 </Project>
