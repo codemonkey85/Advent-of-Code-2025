@@ -351,6 +351,7 @@ MigrationBackup/
 
 # Test inputs
 Inputs/
+!AdventOfCode/Inputs/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
